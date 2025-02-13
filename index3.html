@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="demo">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Select2 Bootstrap Demo</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+	<link rel="stylesheet" href="css/select2-bootstrap.css">
+</head>
+
+<body>
+	<h1>Select2 Multiselect Dropdown List - POC</h1>
+	<div class="jumbotron">
+		<div class="container">
+			<div class="col">
+			<p>Province</p>
+			<div class="select2-wrapper">
+				<select class="form-control select2-multiple" style="width: 300px;" multiple="multiple">
+					<option></option>
+					<option value="BC">British Columbia</option>
+					<option value="ON">Ontario</option>
+					<option value="PE">Prince Edward Island</option>
+					<option value="QC">Quebec</option>
+				</select>
+			</div>
+		    </div>
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>
+	<script>
+		$(".select2-multiple").select2({
+			theme: "bootstrap",
+			placeholder: "All",
+			maximumSelectionSize: 6,
+			containerCssClass: ':all:'
+		});
+
+		$(":checkbox").on("click", function () {
+			$(this).parent().nextAll("select").prop("disabled", !this.checked);
+		});
+	</script>
+</body>
+</html>
